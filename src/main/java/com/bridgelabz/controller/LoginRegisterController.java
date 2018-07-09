@@ -3,6 +3,7 @@ package com.bridgelabz.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +24,9 @@ public class LoginRegisterController {
 	public static final Logger logger =  LoggerFactory.getLogger(LoginRegisterController.class);
 	
 	@Autowired
-	UserService userService;
+	@Qualifier("mysql")
+	UserService userService ;
+	//UserService userMongoService;
 	
 	//--------------------User Login-------------------------------
 	

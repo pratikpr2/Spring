@@ -5,42 +5,47 @@ import org.springframework.stereotype.Repository;
 
 import com.bridgelabz.model.User;
 import com.bridgelabz.repository.UserRepository;
-import com.bridgelabz.repository.UserRepositoryImpl;
+import com.bridgelabz.repository.UserRepositoryMongo;
 
 @Repository
-@Component(value="mysql")
-public class UserServiceImpl implements UserService{
+@Component(value="mongo")
+public class UserServiceMongoImpl implements UserService {
 
+	
+	
 	@Override
 	public User login(String emailId, String password) {
 		// TODO Auto-generated method stub
-		UserRepository repository = new UserRepositoryImpl();
-		User user = repository.getUser(emailId);
-		if(user != null) {
+		UserRepository userRepository = new UserRepositoryMongo();
+		
+		User user = userRepository.getUser(emailId);
+		if(user!=null) {
 			if(user.getPassword().equals(password)) {
 				return user;
 			}
-			else {
+			else
 				return null;
-			}
 		}
-		else {
+		else
 			return null;
-		}
+		
+		
 	}
 
 	@Override
 	public boolean register(User user) {
 		// TODO Auto-generated method stub
-		UserRepository repository = new UserRepositoryImpl();
-		User checkUser = repository.getUser(user.getEmail());
-		if(checkUser != null) {
+		UserRepository userRepository = new UserRepositoryMongo();
+		User checkuser = userRepository.getUser(user.getEmail());
+		
+		if(checkuser!=null) {
 			return false;
 		}
 		else {
-			repository.regUser(user);
+			userRepository.regUser(user);
 			return true;
 		}
+		
 	}
 
 }
