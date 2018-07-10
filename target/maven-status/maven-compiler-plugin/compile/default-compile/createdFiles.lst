@@ -1,0 +1,11 @@
+com/bridgelabz/model/User.class
+com/bridgelabz/repository/UserRepositoryImpl.class
+com/bridgelabz/repository/UserRepositoryMongo.class
+com/bridgelabz/repository/UserRepository.class
+com/bridgelabz/service/UserServiceMongoImpl.class
+com/bridgelabz/controller/LoginRegisterController.class
+com/bridgelabz/util/Utility.class
+com/bridgelabz/service/UserServiceImpl.class
+com/bridgelabz/service/UserService.class
+com/bridgelabz/DemoApplication.class
+com/bridgelabz/repository/UserMongoRepository.class
