@@ -26,7 +26,6 @@ public class LoginRegisterController {
 	@Autowired
 	@Qualifier("mongodb")
 	UserService userService ;
-	
 	//--------------------User Login-------------------------------
 	
 	
